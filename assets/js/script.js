@@ -4,37 +4,55 @@ $("#currentDay").text(today.format("MMM Do, YYYY"));
 var container = $('.container');
 
 var textContent = $('textarea');
-var currentTime = moment().format("hh");
-
-// var timeSlotCurrentTime = moment('');
 
 renderSchedule();
 
 function renderSchedule() {
   for (let startTime = 9; startTime < 20; startTime++) {
-      console.log(startTime)
+      // console.log(startTime)
       let hour;
       if (startTime < 10) {
           hour = `0${startTime}`
       } else {
           hour = startTime.toString()
       }
-      // console.log('hour', hour)
+      console.log(hour)
 
       let time = moment(hour, "HH").format("hA")
-      // console.log(time)
-      var timeSection = $(`<div class="row align-items-start d-flex"><div class="col-2 hour">${time}</div><textarea class="col"></textarea><div class="col-2 saveBtn">Save</div></div>`)
+      console.log(time)
+      var timeSection = $(`<div class="row align-items-start d-flex"><div class="col-2 hour">${time}</div><textarea id=${time} class="col"></textarea><div class="col-2 saveBtn">Save</div></div>`)
       container.append(timeSection);
 
-      // function renderColors() {
-      var textArea = $('textarea');
-      textArea.addClass('present')
-      
-      }
+      var textArea = $(`#${time}`);
+      console.log(textArea);
 
+
+      var currentHour = moment().format('HH');
+      console.log(currentHour);
+
+      if (hour === currentHour) {
+        textArea.addClass('present')
+      } else if (hour > currentHour) {
+        textArea.addClass('future')
+      } else if (hour < currentHour) {
+        textArea.addClass('past')
+      };
+      
+      // function renderColors() {
+      // var textArea = $('hour');
+      // var currentHour = moment().hour();
+      // var currentHour = moment('11', 'HH').format('hA');
+      // console.log(currentHour);
+      // console.log(time);
+      
+      // if (time === currentHour) {
+      //   textArea.addClass('present')
+      // } else if (hour < currentHour) {
+      //   textArea.addClass('past')
+      // }
 
   };
-
+};
 
 
 // function timeInSlot (t) {
