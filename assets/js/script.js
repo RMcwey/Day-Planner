@@ -1,5 +1,5 @@
 var today = moment();
-$("#currentDay").text(today.format("MMM Do, YYYY"));
+$("#currentDay").text(today.format("MMMM Do, YYYY, h:mm:ss a"));
 
 var container = $('.container');
 
@@ -20,7 +20,7 @@ function renderSchedule() {
       // defined time and put it into a create element Jquery function that will create as many elements as is indicated by loop above.
       let time = moment(hour, "HH").format("hA")
       // console.log(time)
-      var timeSection = $(`<div class="row align-items-start d-flex"><div class="col-2 hour">${time}</div><textarea id=${time} class="col"></textarea><div class="col-2 saveBtn">Save</div></div>`)
+      var timeSection = $(`<div class="row align-items-start d-flex"><div class="col-2 hour">${time}</div><textarea id=${time} class="col txtArea"></textarea><div class="col-1 saveBtn">Save</div><div class="col-1 clearBtn">Clear</div></div>`)
       container.append(timeSection);
 
       var textArea = $(`#${time}`);
@@ -108,81 +108,22 @@ function loadSaved () {
   }
 }
 
-var clearButton;
-saveButton.on('click', clearInfo);
+var clearButton = $(`.clearBtn`);
+clearButton.on('click', clearInfo);
 
+function clearInfo(event) {
+  event.preventDefault();
+  document.getElementById('9AM').textContent = localStorage.setItem('text1', "");
+  document.getElementById('10AM').textContent = localStorage.setItem('text2', "");
+  document.getElementById('11AM').textContent = localStorage.setItem('text3', "");
+  document.getElementById('12PM').textContent = localStorage.setItem('text4', "");
+  document.getElementById('1PM').textContent = localStorage.setItem('text5', "");
+  document.getElementById('2PM').textContent = localStorage.setItem('text6', "");
+  document.getElementById('3PM').textContent = localStorage.setItem('text7', "");
+  document.getElementById('4PM').textContent = localStorage.setItem('text8',"");
+  document.getElementById('5PM').textContent = localStorage.setItem('text9', "");
 
-
-// function recallDBS () {
-//   textContent1.textContent = "lame";
-// }
-
-// recallDBS();
-// old code
-
-// var mainTextInput = {
-//   items: textContent.value,
-// }
-// var mainTextInput2;
-// // for (let i=0; i < hour.length; i++){
-// $(`#9AM, textarea`).on('input', function() {
-// mainTextInput = ($(this).val());
-// saveButton.on('click', function (event) {
-// event.preventDefault();
-// localStorage.setItem('text1', JSON.stringify(mainTextInput))
-// });
-// });
-// $('#10AM, textarea').on('input', function() {
-// mainTextInput2 = ($(this).val());
-// saveButton.on('click', function (event) {
-// event.preventDefault();
-// localStorage.setItem('text2', JSON.stringify(mainTextInput2))
-// });
-// });
-
-
-// function saveInfo () {
-//   var textAreaInput = $("textarea").each(function() {
-//     $(this).find(':input');
-//     localStorage.setItem("text", JSON.stringify(textAreaInput));
-
-//   // var textAreaInput = $(`textArea`).val('');
-//     // console.log(localStorage.getItem('text'));
-  
-//   });
-  
-//   // console.log(saveButton);
-
-//   // this is for all save buttons and is working.
-// }
-// var saveButton = $(`.saveBtn`);
-// saveButton.on('click', saveInfo) 
-// saveButton.css('background-color', 'green')
-
-// function timeInSlot (t) {
-//   timeSlot = 
-//   t = 09;
-//   for (var i = 09; i < abilities.length; i++)
-// }
-
-
-
-
-
-// I need to set the time of the first block between 9 and 9:59. I likely need to add a for loop of some type to add an hour for each time after that till the 5pm spot. Then I need to create an if statement that validates the time of each block and adds the appropriate class.  
-
-
-// var time = moment();
-// var timesContainter = $('#container');
-// var currentDate = now.format("MM DD YYYY");
-// moment().format('MMMM Do YYYY, h:mm:ss a');
-
-// var currentDay = $('#currentDay');
-
-// currentDay.text("Today's Date: " + currentDate);
-
-
-
+}
 
 //   Auto Complete function
   // $( function() {

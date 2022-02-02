@@ -2,6 +2,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  
+  background-image: url(../images/ocean.jpg);
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-position:center;
+  background-repeat: no-repeat;
 }
 
 textarea {
@@ -11,6 +19,7 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  height: 55px;
 }
 
 .jumbotron {
@@ -33,13 +42,22 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 60px;
-  border-top: 1px solid white;
+  /* border-top: 1px solid white; */
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  text-align: center;
+  height: 55px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.txtArea {
+  height: 55px;
+  border-top: 1px solid white;
 }
 
 .past {
@@ -74,4 +92,26 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.clearBtn {
+  border-left: 1px solid black;
+  /* border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px; */
+  border-radius: 50px;
+  background-color: lightcoral;
+  color: white;
+  /* added height to the buttons for aesthetics */
+  height: 55px;
+  /* added flex and center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: white solid 3px;
+}
+
+footer {
+  text-align: center;
+  margin: 25px;
+  /* color: white; */
 }
