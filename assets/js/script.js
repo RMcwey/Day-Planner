@@ -3,17 +3,6 @@ $("#currentDay").text(today.format("MMM Do, YYYY"));
 
 var container = $('.container');
 
-// var textContent = document.getElementById('9AM');
-// var textContent2 = $('input[name="10AMtoDo"]').val();
-// var textContent3 = $('input[name="11AMtoDo"]').val();
-// var textContent4 = $('input[name="12PMtoDo"]').val();
-// var textContent5 = $('input[name="1PMtoDo"]').val();
-// var textContent6 = $('input[name="2PMtoDo"]').val();
-// var textContent7 = $('input[name="3PMtoDo"]').val();
-// var textContent8 = $('input[name="4PMtoDo"]').val();
-// var textContent9 = $('input[name="5PMtoDo"]').val();
-
-
 renderSchedule();
 // inputSavedToDos();
 // creating funtion that renders the schedule
@@ -49,6 +38,7 @@ function renderSchedule() {
         textArea.addClass('past')
       };
   };
+  loadSaved();
 };
 
 
@@ -56,38 +46,78 @@ var saveButton = $(`.saveBtn`);
 
 function saveInfo(event) {
   event.preventDefault();
-  var textContent = document.getElementById('9AM');
-//   var textContent =  $('input[name="9AMtoDo"]').val();
-//   var textContent2 = $('input[name="10AMtoDo"]').val();
-//   var textContent3 = $('input[name="11AMtoDo"]').val();
-//   var textContent4 = $('input[name="12PMtoDo"]').val();
-//   var textContent5 = $('input[name="1PMtoDo"]').val();
-//   var textContent6 = $('input[name="2PMtoDo"]').val();
-//   var textContent7 = $('input[name="3PMtoDo"]').val();
-//   var textContent8 = $('input[name="4PMtoDo"]').val();
-//   var textContent9 = $('input[name="5PMtoDo"]').val();
-  localStorage.setItem('text1', JSON.stringify(textContent.value))
-//   localStorage.setItem('text2', JSON.stringify(textContent2))
-//   localStorage.setItem('text3', JSON.stringify(textContent3))
-//   localStorage.setItem('text4', JSON.stringify(textContent4))
-//   localStorage.setItem('text5', JSON.stringify(textContent5))
-//   localStorage.setItem('text6', JSON.stringify(textContent6))
-//   localStorage.setItem('text7', JSON.stringify(textContent7))
-//   localStorage.setItem('text8', JSON.stringify(textContent8))
-//   localStorage.setItem('text9', JSON.stringify(textContent9))
+  var textContent1 = document.getElementById('9AM');
+  var textContent2 = document.getElementById('10AM');
+  var textContent3 = document.getElementById('11AM');
+  var textContent4 = document.getElementById('12PM');
+  var textContent5 = document.getElementById('1PM');
+  var textContent6 = document.getElementById('2PM');
+  var textContent7 = document.getElementById('3PM');
+  var textContent8 = document.getElementById('4PM');
+  var textContent9 = document.getElementById('5PM');
+  localStorage.setItem('text1', textContent1.value);
+  localStorage.setItem('text2', textContent2.value);
+  localStorage.setItem('text3', textContent3.value);
+  localStorage.setItem('text4', textContent4.value);
+  localStorage.setItem('text5', textContent5.value);
+  localStorage.setItem('text6', textContent6.value);
+  localStorage.setItem('text7', textContent7.value);
+  localStorage.setItem('text8', textContent8.value);
+  localStorage.setItem('text9', textContent9.value);
+
 }
 
-// function inputSavedToDos () {
-// textContent = localStorage.getItem("text1");
-// // textLocation1.text(inputThing);
-// }
-
-// // function inputSavedToDos () {
-// //   textContentInput1 = JSON.parse(localStorage.getItem("text1"));
-// // }
 saveButton.on('click', saveInfo);
 
+function loadSaved () {
+  document.getElementById('9AM').textContent = localStorage.getItem('text1');
+  if ('text1' == null) {
+    document.getElementById('9AM').textContent = null;
+  }
+  document.getElementById('10AM').textContent = localStorage.getItem('text2');
+  if ('text2' == null) {
+    document.getElementById('10AM').textContent = null;
+  }
+  document.getElementById('11AM').textContent = localStorage.getItem('text3');
+  if ('text3' == null) {
+    document.getElementById('11AM').textContent = null;
+  }
+  document.getElementById('12PM').textContent = localStorage.getItem('text4');
+  if ('text4' == null) {
+    document.getElementById('12PM').textContent = null;
+  }
+  document.getElementById('1PM').textContent = localStorage.getItem('text5');
+  if ('text5' == null) {
+    document.getElementById('1PM').textContent = null;
+  }
+  document.getElementById('2PM').textContent = localStorage.getItem('text6');
+  if ('text6' == null) {
+    document.getElementById('2PM').textContent = null;
+  }
+  document.getElementById('3PM').textContent = localStorage.getItem('text7');
+  if ('text7' == null) {
+    document.getElementById('3PM').textContent = null;
+  }
+  document.getElementById('4PM').textContent = localStorage.getItem('text8');
+  if ('text8' == null) {
+    document.getElementById('4PM').textContent = null;
+  }
+  document.getElementById('5PM').textContent = localStorage.getItem('text9');
+  if ('text9' == null) {
+    document.getElementById('5PM').textContent = null;
+  }
+}
 
+var clearButton;
+saveButton.on('click', clearInfo);
+
+
+
+// function recallDBS () {
+//   textContent1.textContent = "lame";
+// }
+
+// recallDBS();
 // old code
 
 // var mainTextInput = {
