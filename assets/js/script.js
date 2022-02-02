@@ -122,6 +122,7 @@ function clearInfo(event) {
   document.getElementById('3PM').textContent = localStorage.setItem('text7', "");
   document.getElementById('4PM').textContent = localStorage.setItem('text8',"");
   document.getElementById('5PM').textContent = localStorage.setItem('text9', "");
+  location.reload();
 
 }
 
