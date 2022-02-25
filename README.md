@@ -9,3 +9,7 @@ I am responsible for all of the functionality and meeting the user story and acc
 ![rmcwey github io_Day-Planner_](https://user-images.githubusercontent.com/95650769/152232705-8e865c6a-a32e-499e-9e4a-7e611b90bdf7.png)
 ### 4.Link
 https://rmcwey.github.io/Day-Planner/
+### 5. Technologies Used
+* HTML
+* CSS
+* JavaScript
