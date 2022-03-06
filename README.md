@@ -15,6 +15,13 @@ https://rmcwey.github.io/Day-Planner/
 * JavaScript
 * moment.js
 
+
+### 6. Contact info 
+Ross McWey
+(678) 977-0174
+rmcwey@hotmail.com
+
+
 ### MIT License
 
 Copyright (c) [2022] [Ross McWey]
